@@ -1979,10 +1979,10 @@ def halaman_output():
     st.divider()
     d1, d2 = st.columns(2)
     if xlsx:
-        d1.download_button("📥 Download Excel (.xlsx)", xlsx, file_name="Hitungan_Geometri_Tikungan.xlsx",
+        d1.download_button("📥 Download Excel (.xlsx)", xlsx, file_name="GeoJalan_Hitungan.xlsx",
                            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use_container_width=True)
     if dxf_bytes:
-        d2.download_button("📥 Download CAD (.dxf)", dxf_bytes, file_name="Gambar_Tikungan.dxf",
+        d2.download_button("📥 Download CAD (.dxf)", dxf_bytes, file_name="GeoJalan_Gambar.dxf",
                            mime="application/dxf", use_container_width=True)
     st.info(
         "**Isi Excel:** sheet *Parameter* (FC, SCS, SS), *Pelebaran*, *Jarak Pandang*, dan *Trase & STA*. "
@@ -1994,12 +1994,12 @@ def halaman_output():
 #  MAIN
 # =============================================================================
 def main():
-    st.set_page_config(page_title="Kalkulator Geometri Tikungan Jalan", page_icon="🛣️", layout="wide",
+    st.set_page_config(page_title="GeoJalan – Kalkulator Geometri Tikungan Jalan", page_icon="🛣️", layout="wide",
                        initial_sidebar_state="collapsed")
     st.markdown(CSS, unsafe_allow_html=True)
     st.markdown(
         '<div class="topbar"><div class="brand"><div class="logo">🛣️</div>'
-        '<div><b>Geometri Jalan</b><small>Kalkulator tikungan FC · SCS · SS</small></div></div></div>',
+        '<div><b>GeoJalan</b><small>Kalkulator tikungan FC · SCS · SS</small></div></div></div>',
         unsafe_allow_html=True,
     )
     if st.session_state.get("menu") not in PAGES:
@@ -2020,7 +2020,7 @@ def main():
     }[page]()
     if page != PAGES[0]:
         st.markdown(
-            '<div class="foot"><b>Geometri Jalan</b> · Alat bantu hitung alinyemen horizontal. '
+            '<div class="foot"><b>GeoJalan</b> · Alat bantu hitung alinyemen horizontal. '
             'Periksa hasil terhadap pedoman yang berlaku sebelum dipakai untuk desain.</div>',
             unsafe_allow_html=True,
         )
